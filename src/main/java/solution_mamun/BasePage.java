@@ -46,5 +46,13 @@ public class BasePage {
 				e.printStackTrace();
 			}
 		}
+		public void sendText(By locator, String text) {
+			try {
+				webAction(locator).sendKeys(text);
+			}catch(NoSuchElementException e) {
+				Assert.fail("Element not found with this loactor" + locator.toString());
+				e.printStackTrace();
+			}
+		}
 	}
 
